@@ -2,9 +2,9 @@
 {
     public enum AchievementLevels
     {
-        Zero,
-        One,
-        Two,
-        Three
+        None,
+        Introduced,
+        Reviewed,
+        Qualified
     }
 }

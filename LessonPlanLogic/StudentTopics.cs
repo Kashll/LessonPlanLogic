@@ -28,6 +28,8 @@ namespace LessonPlanLogic
             Topics = topics;
         }
 
+        public List<TopicAchievementLevel> Topics { get; }
+
         private static List<TopicAchievementLevel> CreateTopicAchievementLevels()
         {
             List<TopicAchievementLevel> topics = new List<TopicAchievementLevel>()
@@ -40,7 +42,5 @@ namespace LessonPlanLogic
 
             return topics;
         }
-
-        public List<TopicAchievementLevel> Topics { get; }
     }
 }

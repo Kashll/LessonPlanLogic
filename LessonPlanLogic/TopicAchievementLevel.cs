@@ -5,7 +5,7 @@
         public TopicAchievementLevel(Topic topic)
         {
             Topic = topic;
-            Level = AchievementLevels.Zero;
+            Level = AchievementLevels.None;
         }
 
         public TopicAchievementLevel(Topic topic, AchievementLevels level)

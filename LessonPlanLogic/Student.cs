@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LessonPlanLogic
 {
@@ -24,5 +25,12 @@ namespace LessonPlanLogic
         public DateTime StartDate { get; }
 
         public StudentTopics StudentTopics { get; }
+
+        public TopicsAtLevel GetLeastQualifiedTopics()
+        {
+            IGrouping<AchievementLevels, TopicAchievementLevel> lowestQualifiedTopicGroup = StudentTopics.Topics.GroupBy(x => x.Level).OrderBy(x => x.Key).FirstOrDefault();
+            List<Topic> lowestQualifiedTopics = lowestQualifiedTopicGroup.Select(x => x.Topic).ToList();
+            return new TopicsAtLevel(lowestQualifiedTopics, lowestQualifiedTopicGroup.Key);
+        }
     }
 }
